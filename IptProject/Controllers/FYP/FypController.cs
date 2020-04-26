@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace IptProject.Controllers
 {
-    public class CafeteriaController : Controller
+    public class FypController : Controller
     {
         // GET: Cafeteria
         public ActionResult GetProduct()
@@ -46,11 +46,20 @@ namespace IptProject.Controllers
             return View(lstFoodItems);
         }
 
-        public ActionResult WebPage1()
+        public ActionResult StudentProposal()
         {
             return View();
         }
 
-     
+        public ActionResult StudentHome()
+        {
+            return View();
+        }
+
+        public ActionResult TeacherHome()
+        {
+            return View();
+        }
+
     }
 }

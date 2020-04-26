@@ -131,8 +131,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\Cafeteria\CafeteriaController.cs" />
-    <Compile Include="Controllers\FYP\FYP.cs" />
+    <Compile Include="Controllers\FYP\FypController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -405,9 +404,10 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_PortalLayout.cshtml" />
-    <Content Include="Views\Cafeteria\GetProduct.cshtml" />
-    <Content Include="Views\Cafeteria\WebPage1.cshtml" />
-    <Content Include="Views\FYP\WebPage1.cshtml" />
+    <Content Include="Views\FYP\GetProduct.cshtml" />
+    <Content Include="Views\FYP\StudentProposal.cshtml" />
+    <Content Include="Views\FYP\StudentHome.cshtml" />
+    <Content Include="Views\FYP\TeacherHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
