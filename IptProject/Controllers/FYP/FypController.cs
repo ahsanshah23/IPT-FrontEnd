@@ -1,8 +1,9 @@
-﻿using IptProject.Models.Cafeteria;
+﻿using IptProject.Models.FYP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,6 +12,7 @@ namespace IptProject.Controllers
     public class FypController : Controller
     {
         // GET: Cafeteria
+        [HttpGet]
         public ActionResult GetProduct()
         {
             List<FoodItem> lstFoodItems = new List<FoodItem>();
@@ -57,6 +59,70 @@ namespace IptProject.Controllers
         }
 
         public ActionResult TeacherHome()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> StudentProposal(StudentProposal student)
+        {
+            using (var client = new HttpClient())
+            {
+
+
+                client.BaseAddress = new Uri("http://localhost:44380/api/fyp1post/AddProposalStudent");
+
+                var uri = "http://localhost:44380/api/fyp1post/AddProposalStudent";
+
+                //HTTP POST
+                var postTask = await client.PostAsJsonAsync(uri, student);
+                //postTask.Wait();
+
+                //var result = postTask.Result;
+                //if (result.IsSuccessStatusCode)
+                //{   
+                    return RedirectToAction("GetProduct");
+                //}
+            }
+
+            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+
+            return View(student);
+        }
+
+
+        //// FYP 1 Forms Front /////
+       
+
+        public ActionResult DefenseForm()
+        {
+            return View();
+        }
+        public ActionResult Proposal()
+        {
+            return View();
+        }
+        public ActionResult SupervisorProposal()
+        {
+            return View();
+        }
+        public ActionResult Evaluation()
+        {
+            return View();
+        }
+
+        //// FYP 2 Forms Front /////
+
+
+        public ActionResult FYP2MidEvaluation()
+        {
+            return View();
+        }
+        public ActionResult InternalJuryEvaluation()
+        {
+            return View();
+        }
+        public ActionResult ExternalJuryEvaluation()
         {
             return View();
         }

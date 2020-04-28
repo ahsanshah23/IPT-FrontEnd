@@ -1,0 +1,210 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_PortalLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">FYP Defense form</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-row">
+
+                                <div class="col-md-12">
+
+                                    <div class="md-form form-group">
+                                        <label for="inputProjectTitle">PROJECT TITLE</label>
+                                        <select class="form-control" id="ProjectTitle">
+                                            <option class="form-control" value="volvo">Volvo</option>
+                                            <option class="form-control" value="saab">Saab</option>
+                                            <option class="form-control" value="mercedes">Mercedes</option>
+                                            <option class="form-control" value="audi">Audi</option>
+                                        </select>
+                                       
+                                    </div>
+                                </div>
+
+                                <!-- Grid column -->
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="col-md-4">
+
+                                    <div class="md-form form-group">
+                                        <label for="inputLeaderID">STUDENT 1 ID</label>
+                                        <input type="text" class="form-control" disabled id="inpuLeaderID">
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <div class="md-form form-group">
+                                        <label for="inputLeaderID">STUDENT 2 ID</label>
+                                        <input type="text" class="form-control" disabled id="inpuLeaderID">
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <!-- Material input -->
+                                    <div class="md-form form-group">
+                                        <label for="inputLeaderID">STUDENT 3 ID</label>
+                                        <input type="text" class="form-control" disabled id="inpuLeaderID">
+
+                                    </div>
+                                </div>
+                                <!-- Grid column -->
+                            </div>
+                            <div class="form-row">
+                                <!-- Grid column -->
+                                <div class="col-md-6">
+                                    <!-- Material input -->
+                                    <div class="md-form form-group">
+                                        <label for="inputSupervisor">SUPERVISOR ID</label>
+                                        <input type="text" class="form-control" disabled id="inpuSupervisor">
+
+                                    </div>
+                                </div>
+                                <!-- Grid column -->
+                                <div class="col-md-6">
+                                    <!-- Material input -->
+                                    <div class="md-form form-group">
+                                        <label for="inputCoSupervisor">CO-SUPERVISOR ID</label>
+                                        <input type="text" class="form-control" disabled id="inputCoSupervisor">
+
+                                    </div>
+                                </div>
+                                <!-- Grid column -->
+                            </div>
+
+                        </form>
+
+
+
+                        <br />
+                        <div class="form-check form-check-inline">
+                            <p>PROJECT STATUS: </p>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Status" value="Accepted" /> ACCEPTED
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="Status" value="Rejected" /> REJECTED (RE-DEFEND)
+                        </div>
+                        <br />
+
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">ASSESSMENT CRITERIA TYPE</th>
+                                    <th scope="col" width=25%>MAXIMUM POINTS 05 PER ASSESSMENT TYPE</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Number 1 </td>
+                                    <td><input type="number" class="form-control" id="Marks1"></td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Number 2</td>
+                                    <td><input type="number" class="form-control" id="Marks2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td> Number 3 </td>
+                                    <td><input type="number" class="form-control" id="Marks3"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Number 4</td>
+                                    <td><input type="number" class="form-control" id="Marks4"></td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Number 5</td>
+                                    <td><input type="number" class="form-control" id="Marks5"></td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Number 6</td>
+                                    <td><input type="number" class="form-control" id="Marks6"></td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="md-form form-group">
+                                    <label for="inputSupervisor">DELIVERABLE #1</label>
+                                    <input type="text" class="form-control" id="inpuSupervisor">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="md-form form-group">
+                                    <label for="inputSupervisor">DELIVERABLE #2</label>
+                                    <input type="text" class="form-control" id="inpuSupervisor">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="md-form form-group">
+                                    <label for="inputSupervisor">DELIVERABLE #3</label>
+                                    <input type="text" class="form-control" id="inpuSupervisor">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="md-form form-group">
+                                    <label for="inputSupervisor">DELIVERABLE #4</label>
+                                    <input type="text" class="form-control" id="inpuSupervisor">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="md-form form-group">
+                                    <label for="inputSupervisor">DELIVERABLE #5</label>
+                                    <input type="text" class="form-control" id="inpuSupervisor">
+                                </div>
+                            </div>
+                        </div>
+
+                      
+                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                        <div class="clearfix"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

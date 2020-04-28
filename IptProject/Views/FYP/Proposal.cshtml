@@ -1,0 +1,111 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_PortalLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Pre-Registration Form</h4>
+                        <p class="card-category">Final Year Project I - CS 491</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Project Title</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <label class="bmd-label-floating">Project Type</label>
+
+                                    <div class="form-group">
+
+                                        <div style="margin-left:10% " class="form-check form-check-inline">
+                                            <input type="radio" name="Status" value="Accepted" /> Accepted
+                                        </div>
+
+                                        
+
+                                        <div style="margin-left:15% " class="form-check form-check-inline">
+                                            <input type="radio" name="Status" value="Rejected" /> Rejected
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                             
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Abstract</label>
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating"> </label>
+                                            <textarea class="form-control" rows="7"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h5>Team Members</h5>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Student 1 ID</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Student 1 ID</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Student 1 ID</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Supervisor ID</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Co-Supervisor ID</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                         
+
+                            <button type="submit" class="btn btn-primary pull-right">SUBMIT</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

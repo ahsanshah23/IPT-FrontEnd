@@ -1,0 +1,190 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_PortalLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">MID-I Evaluation Form</h4>
+                        <p class="card-category">Please fill the complete form</p>
+                    </div>
+                    <div class="card-body">
+
+                        <form>
+                            <div class="form-row">
+
+                                <div class="col-md-12">
+
+                                    <div class="md-form form-group">
+                                        <label for="inputProjectTitle">PROJECT TITLE</label>
+                                        <select class="form-control" id="ProjectTitle">
+                                            <option class="form-control" value="volvo">Volvo</option>
+                                            <option class="form-control" value="saab">Saab</option>
+                                            <option class="form-control" value="mercedes">Mercedes</option>
+                                            <option class="form-control" value="audi">Audi</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <!-- Grid column -->
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="col-md-4">
+
+                                    <div class="md-form form-group">
+                                        <label for="inputLeaderID">STUDENT 1 ID</label>
+                                        <input type="text" class="form-control" disabled id="inpuLeaderID">
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <div class="md-form form-group">
+                                        <label for="inputLeaderID">STUDENT 2 ID</label>
+                                        <input type="text" class="form-control" disabled id="inpuLeaderID">
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <div class="md-form form-group">
+                                        <label for="inputLeaderID">STUDENT 3 ID</label>
+                                        <input type="text" class="form-control" disabled id="inpuLeaderID">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+
+                                <div class="col-md-6">
+
+                                    <div class="md-form form-group">
+                                        <label for="inputSupervisor">SUPERVISOR ID</label>
+                                        <input type="text" class="form-control" disabled id="inpuSupervisor">
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="md-form form-group">
+                                        <label for="inputCoSupervisor">CO-SUPERVISOR ID</label>
+                                        <input type="text" class="form-control" disabled id="inputCoSupervisor">
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                        <br />
+
+                        <p>Please grade their progress on the below scale. The evaluation will count towards 10 marks from total.</p>
+
+                        <br />
+
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <h5>Project Progress</h5>
+
+                                <div class="form-group">
+
+                                    <div style="margin-left:10% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Accepted" /> 1
+                                    </div>
+
+                                    <div style="margin-left:15% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Rejected" /> 2
+                                    </div>
+
+                                    <div style="margin-left:15% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Rejected" /> 3
+                                    </div>
+
+                                    <div style="margin-left:15% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Rejected" /> 4
+                                    </div>
+
+                                    <div style="margin-left:15% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Rejected" /> 5
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <h5>Project Documentation</h5>
+
+                                <div class="form-group">
+
+                                    <div style="margin-left:10% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Accepted" /> 1
+                                    </div>
+
+                                    <div style="margin-left:15% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Rejected" /> 2
+                                    </div>
+
+                                    <div style="margin-left:15% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Rejected" /> 3
+                                    </div>
+
+                                    <div style="margin-left:15% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Rejected" /> 4
+                                    </div>
+
+                                    <div style="margin-left:15% " class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="Rejected" /> 5
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <br />
+
+
+                        <h5>Comments about the progress</h5>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Comments</label>
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating"> </label>
+                                        <textarea class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary pull-right">SUBMIT</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
