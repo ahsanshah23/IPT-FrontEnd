@@ -16,12 +16,7 @@ namespace IptProject.Controllers
         public ActionResult GetProduct()
         {
             List<FoodItem> lstFoodItems = new List<FoodItem>();
-            //FoodItem obj1 = new FoodItem(1, "Tikka", "avc", "Available", 200);
-            //FoodItem obj2 = new FoodItem(2, "Pizza", "avc", "Available", 100);
-            //lstFoodItems.Add(obj1);
-            //lstFoodItems.Add(obj2);
-
-
+            
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:44380/api/");
@@ -44,13 +39,14 @@ namespace IptProject.Controllers
                     }
                 }
             }
-            
+
             return View(lstFoodItems);
         }
 
         public ActionResult StudentProposal()
         {
             return View();
+
         }
 
         public ActionResult StudentHome()
@@ -63,49 +59,113 @@ namespace IptProject.Controllers
             return View();
         }
 
+
+        
+        //// FYP 1 Forms Front /////
+        
+
         [HttpPost]
-        public async Task<ActionResult> StudentProposal(StudentProposal student)
+        public ActionResult StudentProposal(StudentProposal student)
         {
+            
             using (var client = new HttpClient())
             {
-
-
-                client.BaseAddress = new Uri("http://localhost:44380/api/fyp1post/AddProposalStudent");
-
-                var uri = "http://localhost:44380/api/fyp1post/AddProposalStudent";
+                client.BaseAddress = new Uri("https://localhost:44380/api/fyp1post/addproposalstudent");
 
                 //HTTP POST
-                var postTask = await client.PostAsJsonAsync(uri, student);
-                //postTask.Wait();
+                var postTask = client.PostAsJsonAsync<StudentProposal>("addproposalstudent", student);
+                postTask.Wait();
 
-                //var result = postTask.Result;
-                //if (result.IsSuccessStatusCode)
-                //{   
-                    return RedirectToAction("GetProduct");
-                //}
+                var result = postTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+
+                    return RedirectToAction("StudentHome");
+                }
             }
-
-            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
-
-            return View(student);
+            return View();
         }
 
+        [HttpGet]
+        public ActionResult ViewStudentProposal()
+        {
+            List<StudentProposal> StudentProposalItems = new List<StudentProposal>();
+           
 
-        //// FYP 1 Forms Front /////
-       
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:44380/api/");
+                //HTTP GET
+                var responseTask = client.GetAsync("fyp1get/GetProposalDetails");
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+
+                    var readTask = result.Content.ReadAsAsync<StudentProposal[]>();
+                    readTask.Wait();
+
+                    var fooditems = readTask.Result;
+
+                    foreach (var item in fooditems)
+                    {
+                        StudentProposalItems.Add(item);
+                    }
+                }
+            }
+
+            return View(StudentProposalItems);
+        }
+
+        [HttpGet]
+        public ActionResult SupervisorProposalCards()
+        {
+
+            List<StudentProposal> lstFoodItems = new List<StudentProposal>();
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:44380/api/");
+                //HTTP GET
+                var responseTask = client.GetAsync("fyp1get/GetProposalsNameSupervisor");
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+
+                    var readTask = result.Content.ReadAsAsync<StudentProposal[]>();
+                    readTask.Wait();
+
+                    var fooditems = readTask.Result;
+
+                    foreach (var item in fooditems)
+                    {
+                        lstFoodItems.Add(item);
+                    }
+                }
+            }
+            
+            return View(lstFoodItems);
+        }
+
+        public ActionResult ViewStudentProposalSupervisor()
+        {
+            
+            return View();
+        }
 
         public ActionResult DefenseForm()
         {
             return View();
         }
-        public ActionResult Proposal()
-        {
-            return View();
-        }
+
         public ActionResult SupervisorProposal()
         {
             return View();
         }
+
         public ActionResult Evaluation()
         {
             return View();
@@ -118,10 +178,12 @@ namespace IptProject.Controllers
         {
             return View();
         }
+
         public ActionResult InternalJuryEvaluation()
         {
             return View();
         }
+
         public ActionResult ExternalJuryEvaluation()
         {
             return View();

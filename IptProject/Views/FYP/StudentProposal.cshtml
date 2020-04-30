@@ -5,72 +5,130 @@
     Layout = "~/Views/Shared/_PortalLayout.cshtml";
 }
 
-<h2>StudentProposal</h2>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Pre-Registration Form</h4>
+                        <p class="card-category">Final Year Project I - CS 491</p>
+                    </div>
+                    <div class="card-body">
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>StudentProposal</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProjectTitle, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProjectTitle, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProjectTitle, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProjectType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProjectType, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProjectType, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Abstract, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Abstract, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Abstract, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-horizontal">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SupervisorID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SupervisorID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SupervisorID, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CoSupervisorID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CoSupervisorID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CoSupervisorID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Student0ID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Student0ID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Student0ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating"> ProjectTitle</label>
+                                      
+                                        @Html.EditorFor(model => model.ProjectTitle, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ProjectTitle, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <label class="bmd-label-floating"> ProjectType</label>
+                                
+                                    <div class="form-group">
+
+                                        <div style="margin-left:10% " class="form-check form-check-inline">
+                                            <label>@Html.RadioButtonFor(model => model.ProjectType, "Product")@Html.Label("Product Based")</label>
+
+                                        </div>
+
+                                        <div style="margin-left:10% " class="form-check form-check-inline">
+                                            <label>@Html.RadioButtonFor(model => model.ProjectType, "Experiment")@Html.Label("Experiment Based")</label>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Abstract</label>
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating"> </label>
+                                            
+                                            @Html.EditorFor(model => model.Abstract, new { htmlAttributes = new { @class = "form-control" }  } )
+                                            @Html.ValidationMessageFor(model => model.Abstract, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h5>Team Members</h5>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Student 1 ID</label>
+                                        @Html.EditorFor(model => model.LeaderID, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.LeaderID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Student 2 ID</label>
+                                        @Html.EditorFor(model => model.Member1ID, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Member1ID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Student 3 ID</label>
+                                        @Html.EditorFor(model => model.Member2ID, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Member2ID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Supervisor ID</label>
+                                        @Html.EditorFor(model => model.SupervisorID, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.SupervisorID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Co-Supervisor ID</label>
+                                        @Html.EditorFor(model => model.CoSupervisorID, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.CoSupervisorID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                     
+                            <div class="form-group">
+                                    <button type="submit" class="btn btn-primary pull-right">SUBMIT</button>
+                            </div>
+                        </div>
+                        }
+
+                        @*<div>
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>*@
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>

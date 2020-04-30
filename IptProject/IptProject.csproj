@@ -411,15 +411,16 @@
     <Content Include="Views\FYP\TeacherHome.cshtml" />
     <Content Include="Views\FYP\DefenseForm.cshtml" />
     <Content Include="Views\FYP\Evaluation.cshtml" />
-    <Content Include="Views\FYP\Proposal.cshtml" />
     <Content Include="Views\FYP\InternalJuryEvaluation.cshtml" />
     <Content Include="Views\FYP\FYP2MidEvaluation.cshtml" />
     <Content Include="Views\FYP\ExternalJuryEvaluation.cshtml" />
     <Content Include="Views\FYP\SupervisorProposal.cshtml" />
+    <Content Include="Views\FYP\ViewStudentProposal.cshtml" />
+    <Content Include="Views\FYP\SupervisorProposalCards.cshtml" />
+    <Content Include="Views\FYP\ViewStudentProposalSupervisor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\FYP\FYP1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
